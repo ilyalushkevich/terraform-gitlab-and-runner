@@ -1,4 +1,8 @@
 resource "yandex_gitlab_instance" "gitlab" {
+  depends_on = [
+    yandex_compute_instance.runner
+  ]
+
   name                      = var.gitlab_name
   resource_preset_id        = "s2.micro"
   disk_size                 = 30

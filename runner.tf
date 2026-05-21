@@ -20,7 +20,7 @@ resource "yandex_compute_instance" "runner" {
     mode = "READ_WRITE"
     initialize_params {
       image_id = data.yandex_compute_image.boot_image.id
-      size     = 15
+      size     = 25
       type     = "network-hdd"
     }
   }
@@ -35,11 +35,8 @@ resource "yandex_compute_instance" "runner" {
   }
 
   metadata = {
-    user-data = (
-      format("#cloud-config\npackage_update: true\nusers:\n  - name: %s\n    shell: /bin/bash\n    sudo: 'ALL=(ALL:ALL) NOPASSWD: ALL'\n    ssh_authorized_keys:\n      - %s\n%s",
-        "gitlab-runner", var.ssh_public_key,
-        format("runcmd:\n  - |\n    curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | bash\n    apt-get install gitlab-runner -yq")
-      )
-    )
+    user-data = templatefile("${path.module}/cloudinit.tftpl", {
+      ssh_public_key = var.ssh_public_key
+    })
   }
 }

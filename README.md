@@ -2,13 +2,13 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_yandex"></a> [yandex](#requirement\_yandex) | = 0.145.0 |
+| <a name="requirement_yandex"></a> [yandex](#requirement\_yandex) | = 0.204.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_yandex"></a> [yandex](#provider\_yandex) | = 0.145.0 |
+| <a name="provider_yandex"></a> [yandex](#provider\_yandex) | = 0.204.0 |
 
 ## Modules
 
@@ -18,9 +18,9 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [yandex_compute_instance.runner](https://registry.terraform.io/providers/yandex-cloud/yandex/0.145.0/docs/resources/compute_instance) | resource |
-| [yandex_gitlab_instance.gitlab](https://registry.terraform.io/providers/yandex-cloud/yandex/0.145.0/docs/resources/gitlab_instance) | resource |
-| [yandex_compute_image.boot_image](https://registry.terraform.io/providers/yandex-cloud/yandex/0.145.0/docs/data-sources/compute_image) | data source |
+| [yandex_compute_instance.runner](https://registry.terraform.io/providers/yandex-cloud/yandex/0.204.0/docs/resources/compute_instance) | resource |
+| [yandex_gitlab_instance.gitlab](https://registry.terraform.io/providers/yandex-cloud/yandex/0.204.0/docs/resources/gitlab_instance) | resource |
+| [yandex_compute_image.boot_image](https://registry.terraform.io/providers/yandex-cloud/yandex/0.204.0/docs/data-sources/compute_image) | data source |
 
 ## Inputs
 

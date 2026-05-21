@@ -36,6 +36,7 @@ resource "yandex_compute_instance" "runner" {
 
   metadata = {
     user-data = templatefile("${path.module}/cloudinit.tftpl", {
+      username       = "gitlab-runner"
       ssh_public_key = var.ssh_public_key
     })
   }
